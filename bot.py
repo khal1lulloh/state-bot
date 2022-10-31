@@ -37,7 +37,7 @@ async def send_welcome(message: types.Message):
    marsh = await for_keyboard_malumot()
    idi = message.from_user.id
    await message.reply(f"Assalomu aleykum, {message.from_user.first_name}!\n\nBu bot orqali bizning o'quv markazimizdagi kurslar xaqida ma'lumot olishingiz va kurslarga yozilishingiz mumkin!",parse_mode='HTML')
-   if checking(await bot.get_chat_member(chat_id="@avlod22",user_id = idi)):
+   if checking(await bot.get_chat_member(chat_id="username_of_your_channel",user_id = idi)):
       global data1
       data1 = db.id_user(idi)
       if data1 is None:
@@ -51,7 +51,7 @@ async def send_welcome(message: types.Message):
 #checking
 @dp.callback_query_handler(text="check")
 async def check(call: CallbackQuery):
-   if checking(await bot.get_chat_member(chat_id="@avlod22",user_id=idi)):
+   if checking(await bot.get_chat_member(chat_id="username_of_your_channel",user_id=idi)):
       global data1
       data1 = db.id_user(idi)
       if data1 is None:
